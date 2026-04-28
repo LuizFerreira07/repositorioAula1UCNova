@@ -4,7 +4,6 @@ import javax.swing.*;
 public class GestãoAlunos extends JFrame {
 
     public GestãoAlunos() {
-        // Configurações básicas da janela
         setTitle("Gestão de Alunos");
         setSize(400, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,11 +53,15 @@ public class GestãoAlunos extends JFrame {
         add(panelStatus, gbc);
 
         gbc.gridx = 0; gbc.gridy = 5;
-        gbc.gridwidth = 2; // Ocupa duas colunas
+        gbc.gridwidth = 2;
         JButton btnSalvar = new JButton("Salvar Aluno");
         add(btnSalvar, gbc);
-    }
 
+        btnSalvar.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Salvo!");
+        });
+    }
+ 
     public static void main(String[] args) {
         // Executa a interface
         SwingUtilities.invokeLater(() -> {
